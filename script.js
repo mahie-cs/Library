@@ -58,13 +58,16 @@
 
   async function listFiles() {
     try {
-      const out = [];
-      await walk(BOOKS_DIR, '', out, new Set());
-      if (out.length) return out;
+      const r = await fetch(BOOKS_DIR + 'books.json', { cache: 'no-cache' });
+      if (r.ok) {
+        const list = await r.json();
+        if (Array.isArray(list) && list.length) return list;
+      }
     } catch (_) {}
-    const r = await fetch(BOOKS_DIR + 'books.json');
-    if (!r.ok) throw new Error('no listing');
-    return r.json();
+    const out = [];
+    await walk(BOOKS_DIR, '', out, new Set());
+    if (!out.length) throw new Error('no books');
+    return out;
   }
 
   function renderCover(path) {
@@ -201,7 +204,7 @@
       catList.appendChild(tile);
     }
   }
-
+  
   async function openModal(b) {
     $('m-title').textContent = b.title;
     $('m-author').textContent = b.author;
@@ -253,6 +256,6 @@
       showCategory(currentTopic);
     })
     .catch(() => {
-      statusEl.textContent = 'Could not read the books folder. Serve this site over http (not file://) and make sure the server lists directories, or add books/books.json.';
+      statusEl.textContent = 'Could not find any books. Run generate_books.py to create books/books.json (GitHub Pages needs it), and serve the site over http, not file://.';
     });
 })();
