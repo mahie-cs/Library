@@ -1,5 +1,6 @@
+<div align="center">
 # [Library](https://mahie-cs.github.io/Library/)
-
+</div>
 > **Incomplete!** This project is still a work in progress.
 
 An online library for browsing engineering and science books in PDF format.
