@@ -1,5 +1,4 @@
 <div align="center">
-  
 # [Library](https://mahie-cs.github.io/Library/)
 
 </div>
