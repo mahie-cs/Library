@@ -1,18 +1,27 @@
 (() => {
   const BOOKS_DIR = 'books/';
-  const MAX_PARALLEL = 3;
-  pdfjsLib.GlobalWorkerOptions.workerSrc =
-    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  const MAX_PARALLEL = 6;
+  const PDFJS = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
+  let pdfjsReady;
+  const ensurePdfJs = () => pdfjsReady || (pdfjsReady = new Promise((res, rej) => {
+    const s = document.createElement('script');
+    s.src = PDFJS + 'pdf.min.js';
+    s.onload = () => { pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS + 'pdf.worker.min.js'; res(); };
+    s.onerror = () => { pdfjsReady = null; rej(new Error('pdf.js failed')); };
+    document.head.appendChild(s);
+  }));
 
   const grid = document.getElementById('grid');
   const statusEl = document.getElementById('status');
   const overlay = document.getElementById('overlay');
   const $ = id => document.getElementById(id);
-  const covers = new Map();
+  const covers = new Map();   // path -> dataURL (only finished covers are kept)
   let books = [];
 
+  const coverUrl = path => 'covers/' + path.split('/').map(encodeURIComponent).join('/') + '.jpg';
   const urlFor = path => BOOKS_DIR + path.split('/').map(encodeURIComponent).join('/');
 
+  // "Authors - Title [Edition].pdf"; the folder (topic) comes from the path
   function parse(path) {
     const parts = path.split('/');
     const file = parts.pop();
@@ -21,7 +30,7 @@
     let edition = '';
     const e = base.match(/\[([^\]]*)\]\s*$/);
     if (e) { edition = e[1].trim(); base = base.slice(0, e.index).trim(); }
-    const i = base.indexOf(' - ');
+    const i = base.indexOf(' - ');          // first " - " separates authors from title
     const author = i > -1 ? base.slice(0, i).trim() : '';
     const title = i > -1 ? base.slice(i + 3).trim() : base;
     return { path, topic, title, edition, author };
@@ -32,6 +41,7 @@
     return m ? m[1] + (m[2] ? m[2].toLowerCase() : '') + ' ed.' : e;
   }
 
+  // ---- finding books (recursive through topic folders) ----
   async function walk(dirUrl, rel, out, seen) {
     if (seen.has(dirUrl)) return;
     seen.add(dirUrl);
@@ -57,6 +67,7 @@
   }
 
   async function listFiles() {
+    // 1) books/books.json (needed on GitHub Pages, which can't list folders)
     try {
       const r = await fetch(BOOKS_DIR + 'books.json', { cache: 'no-cache' });
       if (r.ok) {
@@ -64,18 +75,23 @@
         if (Array.isArray(list) && list.length) return list;
       }
     } catch (_) {}
+    // 2) otherwise read the server's directory listing (local servers)
     const out = [];
     await walk(BOOKS_DIR, '', out, new Set());
     if (!out.length) throw new Error('no books');
     return out;
   }
 
+  // ---- covers: render page 1 only ----
   function renderCover(path) {
-    const task = pdfjsLib.getDocument({ url: urlFor(path), disableAutoFetch: true });
+    let task, cancelled = false;
     const promise = (async () => {
+      await ensurePdfJs();
+      if (cancelled) throw new Error('cancelled');
+      task = pdfjsLib.getDocument({ url: urlFor(path), disableAutoFetch: true });
       const pdf = await task.promise;
       const page = await pdf.getPage(1);
-      const vp = page.getViewport({ scale: 600 / page.getViewport({ scale: 1 }).width });
+      const vp = page.getViewport({ scale: 480 / page.getViewport({ scale: 1 }).width });
       const canvas = document.createElement('canvas');
       canvas.width = vp.width; canvas.height = vp.height;
       await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
@@ -83,11 +99,12 @@
       task.destroy();
       return url;
     })();
-    return { promise, cancel: () => task.destroy() };
+    return { promise, cancel: () => { cancelled = true; if (task) task.destroy(); } };
   }
 
-  const queue = [];
-  const running = new Map();
+  // Only books currently on screen are loaded; scrolling away cancels them.
+  const queue = [];            // thumbs waiting for a slot (newest on top)
+  const running = new Map();   // thumb -> { cancel, cancelled }
   let active = 0;
 
   function show(thumb, url) {
@@ -96,12 +113,25 @@
     img.src = url;
   }
 
-  function schedule(thumb) {
-    const path = thumb.dataset.path;
-    if (covers.has(path)) return show(thumb, covers.get(path));
+  function enqueue(thumb) {
     if (running.has(thumb) || queue.includes(thumb)) return;
     queue.push(thumb);
     pump();
+  }
+
+  function schedule(thumb) {
+    const path = thumb.dataset.path;
+    const img = thumb.querySelector('img');
+    if (covers.has(path)) return show(thumb, covers.get(path));
+    if (thumb.dataset.nocover) return enqueue(thumb);
+    if (img.getAttribute('src')) return;           // pre-made cover already requested
+    img.onload = () => img.classList.add('ready');
+    img.onerror = () => {                          // no pre-made cover: render from the PDF
+      img.removeAttribute('src');
+      thumb.dataset.nocover = '1';
+      if (thumb.isConnected) enqueue(thumb);
+    };
+    img.src = coverUrl(path);
   }
 
   function unschedule(thumb) {
@@ -157,6 +187,7 @@
     statusEl.textContent = list.length ? '' : 'No books found.';
   }
 
+  // Categories: topic tiles -> click one to see its books
   const catList = $('cat-list');
   const catTitle = $('cat-title');
   const catBack = $('cat-back');
@@ -204,7 +235,8 @@
       catList.appendChild(tile);
     }
   }
-  
+
+  // ---- popup ----
   async function openModal(b) {
     $('m-title').textContent = b.title;
     $('m-author').textContent = b.author;
@@ -213,11 +245,12 @@
     $('m-open').href = urlFor(b.path);
     overlay.classList.add('open');
     overlay.setAttribute('aria-hidden', 'false');
-    try {
-      const url = covers.get(b.path) || await renderCover(b.path).promise;
-      covers.set(b.path, url);
-      $('m-cover').src = url;
-    } catch (_) {}
+    const img = $('m-cover');
+    img.onerror = async () => {
+      img.onerror = null;
+      try { const url = await renderCover(b.path).promise; covers.set(b.path, url); img.src = url; } catch (_) {}
+    };
+    img.src = covers.get(b.path) || coverUrl(b.path);
   }
   function closeModal() {
     overlay.classList.remove('open');
@@ -232,6 +265,7 @@
     render(books.filter(b => (b.title + ' ' + b.author + ' ' + b.topic).toLowerCase().includes(q)));
   });
 
+  // ---- navigation ----
   const VIEWS = ['home', 'categories', 'download', 'about'];
   function route() {
     const raw = location.hash.slice(1);
