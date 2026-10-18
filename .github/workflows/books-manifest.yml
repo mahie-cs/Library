@@ -1,4 +1,4 @@
-name: Update books.json
+name: Update books.json and covers
 on:
   push:
     paths: ["books/**/*.pdf"]
@@ -6,14 +6,15 @@ on:
 permissions:
   contents: write
 jobs:
-  manifest:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: pip install pymupdf
       - run: python3 generate_books.py
       - name: Commit if changed
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git add books/books.json
-          git diff --cached --quiet || (git commit -m "Update books.json" && git push)
+          git add -A books/books.json covers
+          git diff --cached --quiet || (git commit -m "Update books.json and covers" && git push)
