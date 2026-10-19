@@ -1,5 +1,12 @@
 [
   {
+    "id": "1fae5f244acc",
+    "topic": "Physics",
+    "name": "[SOLUTIONS] Halliday, Resnick - Fundamentals of Physics Extended [10th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Physics/%5BSOLUTIONS%5D%20Halliday%2C%20Resnick%20-%20Fundamentals%20of%20Physics%20Extended%20%5B10th%20Edition%5D.pdf",
+    "size": 24443786
+  },
+  {
     "id": "6d7adba66f19",
     "topic": "Computer Networking",
     "name": "Adolfo Rodriguez - TCP IP Tutorial and Overview.pdf",
@@ -12,6 +19,20 @@
     "name": "Agarwal - Introduction to Complex Analysis.pdf",
     "url": "https://mahie-cs.github.io/Library-books-1/Complex%20Variable%20Analysis/Agarwal%20-%20Introduction%20to%20Complex%20Analysis.pdf",
     "size": 3448653
+  },
+  {
+    "id": "d72612cc7c75",
+    "topic": "DC Circuits Analysis",
+    "name": "Alexander, Sadiku - Fundamentals of Electric Circuits [4th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/DC%20Circuits%20Analysis/Alexander%2C%20Sadiku%20-%20Fundamentals%20of%20Electric%20Circuits%20%5B4th%20Edition%5D.pdf",
+    "size": 15938882
+  },
+  {
+    "id": "4fe9bd1c40e0",
+    "topic": "Physics",
+    "name": "Alrasheed - Principles of Mechanics.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Physics/Alrasheed%20-%20Principles%20of%20Mechanics.pdf",
+    "size": 12280033
   },
   {
     "id": "3aac4e1c5e71",
@@ -28,11 +49,32 @@
     "size": 8248422
   },
   {
+    "id": "785968c57dad",
+    "topic": "Others",
+    "name": "Ayres, Schmidt - Schaum's Outline of College Mathematics [3rd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Others/Ayres%2C%20Schmidt%20-%20Schaum%27s%20Outline%20of%20College%20Mathematics%20%5B3rd%20Edition%5D.pdf",
+    "size": 6035857
+  },
+  {
+    "id": "125251e08bc4",
+    "topic": "DC Circuits Analysis",
+    "name": "B.L. Theraja - A Textbook of Electrical Technology Vol 1.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/DC%20Circuits%20Analysis/B.L.%20Theraja%20-%20A%20Textbook%20of%20Electrical%20Technology%20Vol%201.pdf",
+    "size": 20571269
+  },
+  {
     "id": "a9520c5aaffb",
     "topic": "Cyber Security",
     "name": "Baloch - Ethical Hacking and Penetration Testing Guide.pdf",
     "url": "https://mahie-cs.github.io/Library-books-1/Cyber%20Security/Baloch%20-%20Ethical%20Hacking%20and%20Penetration%20Testing%20Guide.pdf",
     "size": 23527100
+  },
+  {
+    "id": "abe92653999f",
+    "topic": "Data Structures and Algorithms",
+    "name": "Barnett, Tongo - Data Structures and Algorithms, Annotated Reference with Examples [1st Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Data%20Structures%20and%20Algorithms/Barnett%2C%20Tongo%20-%20Data%20Structures%20and%20Algorithms%2C%20Annotated%20Reference%20with%20Examples%20%5B1st%20Edition%5D.pdf",
+    "size": 1088734
   },
   {
     "id": "577ea5d1ff95",
@@ -47,6 +89,48 @@
     "name": "Behrouz A. Forouzan - Data Communications and Networking.pdf",
     "url": "https://mahie-cs.github.io/Library-books-1/Computer%20Networking/Behrouz%20A.%20Forouzan%20-%20Data%20Communications%20and%20Networking.pdf",
     "size": 11359708
+  },
+  {
+    "id": "2e0413dd594a",
+    "topic": "Engineering Mathematics",
+    "name": "Bird - Basic Engineering Mathematics [5th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Engineering%20Mathematics/Bird%20-%20Basic%20Engineering%20Mathematics%20%5B5th%20Edition%5D.pdf",
+    "size": 3511707
+  },
+  {
+    "id": "c580928eb96c",
+    "topic": "Engineering Mathematics",
+    "name": "Bird - Higher Engineering Mathematics [6th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Engineering%20Mathematics/Bird%20-%20Higher%20Engineering%20Mathematics%20%5B6th%20Edition%5D.pdf",
+    "size": 6084601
+  },
+  {
+    "id": "c7c75036acac",
+    "topic": "Programming / HTML, CSS, Javascript",
+    "name": "Blumenthal - Javascript, Learn Javascript with Ease.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Programming/HTML%2C%20CSS%2C%20Javascript/Blumenthal%20-%20Javascript%2C%20Learn%20Javascript%20with%20Ease.pdf",
+    "size": 591843
+  },
+  {
+    "id": "7413face6c5f",
+    "topic": "DC Circuits Analysis",
+    "name": "Boylstad - Introductory Circuit Analysis.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/DC%20Circuits%20Analysis/Boylstad%20-%20Introductory%20Circuit%20Analysis.pdf",
+    "size": 14280198
+  },
+  {
+    "id": "9bccf4cf21cf",
+    "topic": "Differential Equation",
+    "name": "Bronson - Schaum's Easy Outlines of Differential Equations.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Differential%20Equation/Bronson%20-%20Schaum%27s%20Easy%20Outlines%20of%20Differential%20Equations.pdf",
+    "size": 1816152
+  },
+  {
+    "id": "84c728fca5cf",
+    "topic": "Differential Equation",
+    "name": "Bronson, Costa - Schaum's Outline of Differential Equations [3rd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Differential%20Equation/Bronson%2C%20Costa%20-%20Schaum%27s%20Outline%20of%20Differential%20Equations%20%5B3rd%20Edition%5D.pdf",
+    "size": 18217094
   },
   {
     "id": "55159e0d936f",
@@ -70,6 +154,41 @@
     "size": 39360628
   },
   {
+    "id": "19f6bfec70a9",
+    "topic": "Linear Algebra",
+    "name": "Brownlee - Basics for Linear Algebra for Machine Learning - Discover the Mathematical Language of Data in Python (2018).pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Linear%20Algebra/Brownlee%20-%20Basics%20for%20Linear%20Algebra%20for%20Machine%20Learning%20-%20Discover%20the%20Mathematical%20Language%20of%20Data%20in%20Python%20%282018%29.pdf",
+    "size": 1400200
+  },
+  {
+    "id": "d88132941000",
+    "topic": "Data Structures and Algorithms",
+    "name": "Brownlee - Clever Algorithms, Nature-Inspired Programming Recipes.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Data%20Structures%20and%20Algorithms/Brownlee%20-%20Clever%20Algorithms%2C%20Nature-Inspired%20Programming%20Recipes.pdf",
+    "size": 1888511
+  },
+  {
+    "id": "5d5a04cae5d6",
+    "topic": "Physics",
+    "name": "Bueche, Hecht - Schaum's Outline of Theory and Problems of College Physics [9th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Physics/Bueche%2C%20Hecht%20-%20Schaum%27s%20Outline%20of%20Theory%20and%20Problems%20of%20College%20Physics%20%5B9th%20Edition%5D.pdf",
+    "size": 7875096
+  },
+  {
+    "id": "9508cfd254a9",
+    "topic": "Numerical Methods",
+    "name": "Chapra, Canale - Numerical Methods for Engineers [6th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Numerical%20Methods/Chapra%2C%20Canale%20-%20Numerical%20Methods%20for%20Engineers%20%5B6th%20Edition%5D.pdf",
+    "size": 21791880
+  },
+  {
+    "id": "743db906dbbe",
+    "topic": "Numerical Methods",
+    "name": "Chapra, Canale - Numerical Methods for Engineers [7th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Numerical%20Methods/Chapra%2C%20Canale%20-%20Numerical%20Methods%20for%20Engineers%20%5B7th%20Edition%5D.pdf",
+    "size": 10917570
+  },
+  {
     "id": "9175fd9cbf06",
     "topic": "Computer Vision",
     "name": "Chung - Pro Processing for Images and Computer Vision with OpenCV.pdf",
@@ -82,6 +201,20 @@
     "name": "Cicolani - Beginning Robotics with Raspberry Pi and Arduino Using Python and OpenCV.pdf",
     "url": "https://mahie-cs.github.io/Library-books-1/Arduino/Cicolani%20-%20Beginning%20Robotics%20with%20Raspberry%20Pi%20and%20Arduino%20Using%20Python%20and%20OpenCV.pdf",
     "size": 8312518
+  },
+  {
+    "id": "5add7fa120ad",
+    "topic": "Programming / Object-Oriented Programming",
+    "name": "Clark - Beginning C# Object-Oriented Programming [2nd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Programming/Object-Oriented%20Programming/Clark%20-%20Beginning%20C%23%20Object-Oriented%20Programming%20%5B2nd%20Edition%5D.pdf",
+    "size": 5010511
+  },
+  {
+    "id": "41920f0f718a",
+    "topic": "Physics",
+    "name": "Cohen, Emeritus - Classical Mechanics, a Critical Introduction (with Solutions).pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Physics/Cohen%2C%20Emeritus%20-%20Classical%20Mechanics%2C%20a%20Critical%20Introduction%20%28with%20Solutions%29.pdf",
+    "size": 5141382
   },
   {
     "id": "f8f7e9485351",
@@ -119,6 +252,20 @@
     "size": 14760881
   },
   {
+    "id": "774caae067a8",
+    "topic": "Signals and Systems",
+    "name": "Corinthios - Signals, Systems, Transforms, and Digital Signal Processing with MATLAB (2009).pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Signals%20and%20Systems/Corinthios%20-%20Signals%2C%20Systems%2C%20Transforms%2C%20and%20Digital%20Signal%20Processing%20with%20MATLAB%20%282009%29.pdf",
+    "size": 19896534
+  },
+  {
+    "id": "74f9efdd7571",
+    "topic": "Data Structures and Algorithms",
+    "name": "Cormen, Leiserson, Rivest - Introduction To Algorithms [3rd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Data%20Structures%20and%20Algorithms/Cormen%2C%20Leiserson%2C%20Rivest%20-%20Introduction%20To%20Algorithms%20%5B3rd%20Edition%5D.pdf",
+    "size": 5630897
+  },
+  {
     "id": "8708797a0197",
     "topic": "Arduino",
     "name": "Craft - Arduino Project for Dummies.pdf",
@@ -126,11 +273,46 @@
     "size": 15211842
   },
   {
+    "id": "7d5052ae8961",
+    "topic": "Data Structures and Algorithms",
+    "name": "Das - Principles of Data Structures Using C and C++.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Data%20Structures%20and%20Algorithms/Das%20-%20Principles%20of%20Data%20Structures%20Using%20C%20and%20C%2B%2B.pdf",
+    "size": 2527040
+  },
+  {
+    "id": "19173f3cdb55",
+    "topic": "Programming / C, C++, C#",
+    "name": "Deitel - C How to Program [7th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Programming/C%2C%20C%2B%2B%2C%20C%23/Deitel%20-%20C%20How%20to%20Program%20%5B7th%20Edition%5D.pdf",
+    "size": 7745330
+  },
+  {
+    "id": "c1016575a2d4",
+    "topic": "Programming / C, C++, C#",
+    "name": "Deitel - C++ How To Program [10th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Programming/C%2C%20C%2B%2B%2C%20C%23/Deitel%20-%20C%2B%2B%20How%20To%20Program%20%5B10th%20Edition%5D.pdf",
+    "size": 7990146
+  },
+  {
     "id": "8c9ffa75f8f9",
     "topic": "Arduino",
     "name": "Edstrom - Arduino for Musicians, A Complete Guide to Arduino and Teensy Microcontrollers.pdf",
     "url": "https://mahie-cs.github.io/Library-books-1/Arduino/Edstrom%20-%20Arduino%20for%20Musicians%2C%20A%20Complete%20Guide%20to%20Arduino%20and%20Teensy%20Microcontrollers.pdf",
     "size": 28911581
+  },
+  {
+    "id": "b1bdfa334e41",
+    "topic": "Differential Equation",
+    "name": "Edwards, Penney, Calvis - Differential Equations and Boundary Value Problems, Computing and Modeling [5th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Differential%20Equation/Edwards%2C%20Penney%2C%20Calvis%20-%20Differential%20Equations%20and%20Boundary%20Value%20Problems%2C%20Computing%20and%20Modeling%20%5B5th%20Edition%5D.pdf",
+    "size": 10327743
+  },
+  {
+    "id": "b0c08299b4e6",
+    "topic": "Differential Equation",
+    "name": "Edwards, Penney, Calvis - Differential Equations and Boundary Value Problems, Computing and Modeling [6th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Differential%20Equation/Edwards%2C%20Penney%2C%20Calvis%20-%20Differential%20Equations%20and%20Boundary%20Value%20Problems%2C%20Computing%20and%20Modeling%20%5B6th%20Edition%5D.pdf",
+    "size": 14290935
   },
   {
     "id": "459d2c759476",
@@ -161,6 +343,13 @@
     "size": 13623401
   },
   {
+    "id": "8b8e67b16b98",
+    "topic": "Programming / Python",
+    "name": "Eric Matthes - Python Crash Course, A Hands On, Project Based Introduction to Programming [2nd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Programming/Python/Eric%20Matthes%20-%20Python%20Crash%20Course%2C%20A%20Hands%20On%2C%20Project%20Based%20Introduction%20to%20Programming%20%5B2nd%20Edition%5D.pdf",
+    "size": 7244232
+  },
+  {
     "id": "447f6007f9d5",
     "topic": "Basic Electronics",
     "name": "Floyd, Buchla - Electronics Fundamentals. Circuits, Devices, and Applications [8th Edition].pdf",
@@ -175,11 +364,74 @@
     "size": 8528512
   },
   {
+    "id": "ffc49c177bfa",
+    "topic": "Probability and Statistics",
+    "name": "Ghahramani - Fundamental of Probability with Stochastic Processes [3rd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Probability%20and%20Statistics/Ghahramani%20-%20Fundamental%20of%20Probability%20with%20Stochastic%20Processes%20%5B3rd%20Edition%5D.pdf",
+    "size": 4591635
+  },
+  {
+    "id": "b38d13b24ba5",
+    "topic": "Linear Algebra",
+    "name": "Gilbert Strang - Introduction to Linear Algebra [4th Edition].PDF",
+    "url": "https://mahie-cs.github.io/Library-books-2/Linear%20Algebra/Gilbert%20Strang%20-%20Introduction%20to%20Linear%20Algebra%20%5B4th%20Edition%5D.PDF",
+    "size": 35947968
+  },
+  {
+    "id": "357db6585876",
+    "topic": "Linear Algebra",
+    "name": "Gilbert Strang - Introduction to Linear Algebra [5th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Linear%20Algebra/Gilbert%20Strang%20-%20Introduction%20to%20Linear%20Algebra%20%5B5th%20Edition%5D.pdf",
+    "size": 63895751
+  },
+  {
+    "id": "71f665622d5f",
+    "topic": "Linear Algebra",
+    "name": "Gilbert Strang - Solutions to Introduction to Linear Algebra [5th Edition] {2016).pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Linear%20Algebra/Gilbert%20Strang%20-%20Solutions%20to%20Introduction%20to%20Linear%20Algebra%20%5B5th%20Edition%5D%20%7B2016%29.pdf",
+    "size": 917416
+  },
+  {
+    "id": "f5c6f2649a92",
+    "topic": "Programming / Kotlin",
+    "name": "Hagos - Learn Android Studio 3 with Kotlin Efficient Android App Development.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Programming/Kotlin/Hagos%20-%20Learn%20Android%20Studio%203%20with%20Kotlin%20Efficient%20Android%20App%20Development.pdf",
+    "size": 13268565
+  },
+  {
+    "id": "06c57bf92031",
+    "topic": "Programming / Object-Oriented Programming",
+    "name": "Hall - Adaptive Code Agile Coding with Design Patterns and SOLID Principles [2nd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Programming/Object-Oriented%20Programming/Hall%20-%20Adaptive%20Code%20Agile%20Coding%20with%20Design%20Patterns%20and%20SOLID%20Principles%20%5B2nd%20Edition%5D.pdf",
+    "size": 27757111
+  },
+  {
+    "id": "6c89c039f175",
+    "topic": "Programming / Object-Oriented Programming",
+    "name": "Hall - Adaptive Code via C# Agile Coding with Design Patterns and SOLID Principles.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Programming/Object-Oriented%20Programming/Hall%20-%20Adaptive%20Code%20via%20C%23%20Agile%20Coding%20with%20Design%20Patterns%20and%20SOLID%20Principles.pdf",
+    "size": 35085191
+  },
+  {
     "id": "3c127e96592f",
     "topic": "Cyber Security",
     "name": "Hall, Watson - Hacking, Computer Hacking, Security Testing,Penetration Testing, and Basic Security.pdf",
     "url": "https://mahie-cs.github.io/Library-books-1/Cyber%20Security/Hall%2C%20Watson%20-%20Hacking%2C%20Computer%20Hacking%2C%20Security%20Testing%2CPenetration%20Testing%2C%20and%20Basic%20Security.pdf",
     "size": 20297384
+  },
+  {
+    "id": "bc382961f3df",
+    "topic": "Physics",
+    "name": "Halliday, Resnick - Fundamentals of Physics [10th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Physics/Halliday%2C%20Resnick%20-%20Fundamentals%20of%20Physics%20%5B10th%20Edition%5D.pdf",
+    "size": 32221317
+  },
+  {
+    "id": "359c776e053d",
+    "topic": "Physics",
+    "name": "Hecht - Schaum’s Outline of College Physics [12th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Physics/Hecht%20-%20Schaum%E2%80%99s%20Outline%20of%20College%20Physics%20%5B12th%20Edition%5D.pdf",
+    "size": 77379724
   },
   {
     "id": "e10277946c4b",
@@ -194,6 +446,41 @@
     "name": "Hennessy, Patterson - Computer Architecture A Quantitative Approach [5th edition].pdf",
     "url": "https://mahie-cs.github.io/Library-books-1/Computer%20Architecture/Hennessy%2C%20Patterson%20-%20Computer%20Architecture%20A%20Quantitative%20Approach%20%5B5th%20edition%5D.pdf",
     "size": 13106737
+  },
+  {
+    "id": "2ee8c1ca57a4",
+    "topic": "Numerical Methods",
+    "name": "Hoffman - Numerical Methods for Engineers and Scientists [2nd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Numerical%20Methods/Hoffman%20-%20Numerical%20Methods%20for%20Engineers%20and%20Scientists%20%5B2nd%20Edition%5D.pdf",
+    "size": 35273625
+  },
+  {
+    "id": "8d2d1594ccdd",
+    "topic": "Probability and Statistics",
+    "name": "Hogg - Probability and Statistical Inference.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Probability%20and%20Statistics/Hogg%20-%20Probability%20and%20Statistical%20Inference.pdf",
+    "size": 32070909
+  },
+  {
+    "id": "c844fe93a51c",
+    "topic": "Programming / Django",
+    "name": "Holovaty, Moss - The Definitive Guide to Django Web Development.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Programming/Django/Holovaty%2C%20Moss%20-%20The%20Definitive%20Guide%20to%20Django%20Web%20Development.pdf",
+    "size": 1515512
+  },
+  {
+    "id": "6c3a6971c5e7",
+    "topic": "Differential Equation",
+    "name": "Holzner - Differential Equations for Dummies.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Differential%20Equation/Holzner%20-%20Differential%20Equations%20for%20Dummies.pdf",
+    "size": 5757266
+  },
+  {
+    "id": "6f7de5fefb78",
+    "topic": "Probability and Statistics",
+    "name": "Hsu - Schaum's Outline of Probability, Random Variables & Random Processes.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Probability%20and%20Statistics/Hsu%20-%20Schaum%27s%20Outline%20of%20Probability%2C%20Random%20Variables%20%26%20Random%20Processes.pdf",
+    "size": 4635626
   },
   {
     "id": "074ff9b3389b",
@@ -224,6 +511,20 @@
     "size": 44633256
   },
   {
+    "id": "07411a2cdae1",
+    "topic": "Programming / C, C++, C#",
+    "name": "Kalicharan - Learn to Program with C Learn to Program using the Popular C Programming Language.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Programming/C%2C%20C%2B%2B%2C%20C%23/Kalicharan%20-%20Learn%20to%20Program%20with%20C%20Learn%20to%20Program%20using%20the%20Popular%20C%20Programming%20Language.pdf",
+    "size": 3526094
+  },
+  {
+    "id": "9d4eb881df2d",
+    "topic": "Signals and Systems",
+    "name": "Kamen, Heck - Fundamentals of signals and systems using the Web and MATLAB  [3rd Edition] (2014).pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Signals%20and%20Systems/Kamen%2C%20Heck%20-%20Fundamentals%20of%20signals%20and%20systems%20using%20the%20Web%20and%20MATLAB%20%20%5B3rd%20Edition%5D%20%282014%29.pdf",
+    "size": 4872524
+  },
+  {
     "id": "c1d5ec17675c",
     "topic": "Basic Electronics",
     "name": "Kishore - Electronic Devices and Circuits.pdf",
@@ -231,11 +532,39 @@
     "size": 17936128
   },
   {
+    "id": "6d43b6ae5e38",
+    "topic": "Engineering Mathematics",
+    "name": "Kreyszig - Advanced Engineering Math [10th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Engineering%20Mathematics/Kreyszig%20-%20Advanced%20Engineering%20Math%20%5B10th%20Edition%5D.pdf",
+    "size": 22529632
+  },
+  {
+    "id": "d3098494bc73",
+    "topic": "Linear Algebra",
+    "name": "Lipschutz, Lipson - Schaum's Outline of Linear Algebra [4th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Linear%20Algebra/Lipschutz%2C%20Lipson%20-%20Schaum%27s%20Outline%20of%20Linear%20Algebra%20%5B4th%20Edition%5D.pdf",
+    "size": 3446889
+  },
+  {
     "id": "762f2aa2882e",
     "topic": "Basic Electronics",
     "name": "Maini - Digital Electronics Principles, Devices, and Applications.pdf",
     "url": "https://mahie-cs.github.io/Library-books-1/Basic%20Electronics/Maini%20-%20Digital%20Electronics%20Principles%2C%20Devices%2C%20and%20Applications.pdf",
     "size": 9476463
+  },
+  {
+    "id": "9095415d30cb",
+    "topic": "Machine Learning",
+    "name": "Manaswi - Deep Learning with Applications Using Python, Chatbots and Face, Object, and Speech Recognition with Tensorflow and Keras.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Machine%20Learning/Manaswi%20-%20Deep%20Learning%20with%20Applications%20Using%20Python%2C%20Chatbots%20and%20Face%2C%20Object%2C%20and%20Speech%20Recognition%20with%20Tensorflow%20and%20Keras.pdf",
+    "size": 11813033
+  },
+  {
+    "id": "0cf9e959c149",
+    "topic": "Probability and Statistics",
+    "name": "Marcel, Dekker - Probability and Statistical Inference.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Probability%20and%20Statistics/Marcel%2C%20Dekker%20-%20Probability%20and%20Statistical%20Inference.pdf",
+    "size": 19716238
   },
   {
     "id": "b034b247924c",
@@ -259,11 +588,67 @@
     "size": 21876260
   },
   {
+    "id": "e3bddf21a986",
+    "topic": "Data Structures and Algorithms",
+    "name": "Miller, Ranum - Problem Solving With Algorithms and Data Structures.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Data%20Structures%20and%20Algorithms/Miller%2C%20Ranum%20-%20Problem%20Solving%20With%20Algorithms%20and%20Data%20Structures.pdf",
+    "size": 4356997
+  },
+  {
+    "id": "0bef335455a4",
+    "topic": "Theory of Computer Science",
+    "name": "Mishra, Chandrasekaran - Theory of Computer Science (Automata, Languages and Computation) [3rd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Theory%20of%20Computer%20Science/Mishra%2C%20Chandrasekaran%20-%20Theory%20of%20Computer%20Science%20%28Automata%2C%20Languages%20and%20Computation%29%20%5B3rd%20Edition%5D.pdf",
+    "size": 17671852
+  },
+  {
+    "id": "f961a6e0a080",
+    "topic": "Probability and Statistics",
+    "name": "Montgomery, Runger - Applied Statistics Probability for Engineers [3rd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Probability%20and%20Statistics/Montgomery%2C%20Runger%20-%20Applied%20Statistics%20Probability%20for%20Engineers%20%5B3rd%20Edition%5D.pdf",
+    "size": 14284965
+  },
+  {
+    "id": "0c62b5f80034",
+    "topic": "Machine Learning",
+    "name": "Müller, Guido - Introduction to Machine Learning with Python.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Machine%20Learning/M%C3%BCller%2C%20Guido%20-%20Introduction%20to%20Machine%20Learning%20with%20Python.pdf",
+    "size": 33158472
+  },
+  {
     "id": "03a9522e0d1b",
     "topic": "Complex Variable Analysis",
     "name": "Needham - Visual Complex Analysis.pdf",
     "url": "https://mahie-cs.github.io/Library-books-1/Complex%20Variable%20Analysis/Needham%20-%20Visual%20Complex%20Analysis.pdf",
     "size": 46184583
+  },
+  {
+    "id": "84520ab394f6",
+    "topic": "Data Analytics",
+    "name": "Nelli - Python Data Analytics With Pandas, NumPy, and Matplotlib [2nd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Data%20Analytics/Nelli%20-%20Python%20Data%20Analytics%20With%20Pandas%2C%20NumPy%2C%20and%20Matplotlib%20%5B2nd%20Edition%5D.pdf",
+    "size": 14625074
+  },
+  {
+    "id": "43499c9bc599",
+    "topic": "Data Analytics",
+    "name": "Nelli - Python Data Analytics, Data Analysis and Science Using Pandas, matplotlib, and the Python Programming Language.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Data%20Analytics/Nelli%20-%20Python%20Data%20Analytics%2C%20Data%20Analysis%20and%20Science%20Using%20Pandas%2C%20matplotlib%2C%20and%20the%20Python%20Programming%20Language.pdf",
+    "size": 12639268
+  },
+  {
+    "id": "f4ec3013be17",
+    "topic": "DC Circuits Analysis",
+    "name": "Nilson - Electric Circuits [12th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/DC%20Circuits%20Analysis/Nilson%20-%20Electric%20Circuits%20%5B12th%20Edition%5D.pdf",
+    "size": 34544106
+  },
+  {
+    "id": "86cc01b81084",
+    "topic": "DC Circuits Analysis",
+    "name": "Nilson - Solutions to Electric Circuits [9th edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/DC%20Circuits%20Analysis/Nilson%20-%20Solutions%20to%20Electric%20Circuits%20%5B9th%20edition%5D.pdf",
+    "size": 4146610
   },
   {
     "id": "5aa7ffc53141",
@@ -273,11 +658,67 @@
     "size": 36072526
   },
   {
+    "id": "0ceb45031195",
+    "topic": "Physics",
+    "name": "Oman - 3,000 Solved Problems in Physics (Schaum's Solved Problems) (Schaum's Solved Problems Series).pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Physics/Oman%20-%203%2C000%20Solved%20Problems%20in%20Physics%20%28Schaum%27s%20Solved%20Problems%29%20%28Schaum%27s%20Solved%20Problems%20Series%29.pdf",
+    "size": 58488867
+  },
+  {
+    "id": "a3e3918fe67f",
+    "topic": "Signals and Systems",
+    "name": "Oppenheim, Willsky, Nawab - Signals & Systems [2nd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Signals%20and%20Systems/Oppenheim%2C%20Willsky%2C%20Nawab%20-%20Signals%20%26%20Systems%20%5B2nd%20Edition%5D.pdf",
+    "size": 35621763
+  },
+  {
+    "id": "0612ad343ecc",
+    "topic": "Signals and Systems",
+    "name": "Oppenheim, Willsky, Nawab - Solution to Signals & Systems [2nd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Signals%20and%20Systems/Oppenheim%2C%20Willsky%2C%20Nawab%20-%20Solution%20to%20Signals%20%26%20Systems%20%5B2nd%20Edition%5D.pdf",
+    "size": 27948969
+  },
+  {
     "id": "6ef77ef680ad",
     "topic": "Arduino",
     "name": "Osborne - Learn to Program in Arduino C, 18 Lessons, From setup() to Robots.pdf",
     "url": "https://mahie-cs.github.io/Library-books-1/Arduino/Osborne%20-%20Learn%20to%20Program%20in%20Arduino%20C%2C%2018%20Lessons%2C%20From%20setup%28%29%20to%20Robots.pdf",
     "size": 6006206
+  },
+  {
+    "id": "58e766f38bfd",
+    "topic": "Physics",
+    "name": "Randall D. Knight - Physics for Scientists and Engineers, A Strategic Approach [2nd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Physics/Randall%20D.%20Knight%20-%20Physics%20for%20Scientists%20and%20Engineers%2C%20A%20Strategic%20Approach%20%5B2nd%20Edition%5D.pdf",
+    "size": 75302019
+  },
+  {
+    "id": "1717ef889d11",
+    "topic": "Programming / HTML, CSS, Javascript",
+    "name": "Robbins - Learning Web Design, A Beginner’s Guide to HTML, CSS, JavaScript, and Web Graphics [5th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Programming/HTML%2C%20CSS%2C%20Javascript/Robbins%20-%20Learning%20Web%20Design%2C%20A%20Beginner%E2%80%99s%20Guide%20to%20HTML%2C%20CSS%2C%20JavaScript%2C%20and%20Web%20Graphics%20%5B5th%20Edition%5D.pdf",
+    "size": 79711153
+  },
+  {
+    "id": "2254b7c38429",
+    "topic": "Electronic Communications",
+    "name": "Roddy, Coolen - Electronic Communications [4th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Electronic%20Communications/Roddy%2C%20Coolen%20-%20Electronic%20Communications%20%5B4th%20Edition%5D.pdf",
+    "size": 4990494
+  },
+  {
+    "id": "8f172db3ba8d",
+    "topic": "Discrete Mathematics",
+    "name": "Rosen - Discrete Mathematics and Its Application [8th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Discrete%20Mathematics/Rosen%20-%20Discrete%20Mathematics%20and%20Its%20Application%20%5B8th%20Edition%5D.pdf",
+    "size": 36741964
+  },
+  {
+    "id": "f1291180e765",
+    "topic": "Programming / Django",
+    "name": "Rubio - Beginning Django, Web Application Development with Python.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Programming/Django/Rubio%20-%20Beginning%20Django%2C%20Web%20Application%20Development%20with%20Python.pdf",
+    "size": 8161504
   },
   {
     "id": "82eee361bd41",
@@ -294,11 +735,60 @@
     "size": 246827
   },
   {
+    "id": "23c37ae20bf8",
+    "topic": "Machine Learning",
+    "name": "Russell - Machine Learning Step-by-Step Guide To Implement Machine Learning Algorithms with Python.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Machine%20Learning/Russell%20-%20Machine%20Learning%20Step-by-Step%20Guide%20To%20Implement%20Machine%20Learning%20Algorithms%20with%20Python.pdf",
+    "size": 1661937
+  },
+  {
+    "id": "e90712b467c6",
+    "topic": "Data Structures and Algorithms",
+    "name": "Sahni - Algorithms and Application in C++ [2nd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Data%20Structures%20and%20Algorithms/Sahni%20-%20Algorithms%20and%20Application%20in%20C%2B%2B%20%5B2nd%20Edition%5D.pdf",
+    "size": 29425723
+  },
+  {
+    "id": "a2a82ac9b2ff",
+    "topic": "Data Structures and Algorithms",
+    "name": "Sedgewick, Wayne - Algorithms [4th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Data%20Structures%20and%20Algorithms/Sedgewick%2C%20Wayne%20-%20Algorithms%20%5B4th%20Edition%5D.pdf",
+    "size": 12512915
+  },
+  {
+    "id": "333f46520944",
+    "topic": "Physics",
+    "name": "Serway, Jewett - Physics for Scientists and Engineers with Modern Physics [9th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Physics/Serway%2C%20Jewett%20-%20Physics%20for%20Scientists%20and%20Engineers%20with%20Modern%20Physics%20%5B9th%20Edition%5D.pdf",
+    "size": 55660200
+  },
+  {
+    "id": "96e8992ed599",
+    "topic": "Differential Equation",
+    "name": "Simmons - Differential Equations with Applications [3rd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Differential%20Equation/Simmons%20-%20Differential%20Equations%20with%20Applications%20%5B3rd%20Edition%5D.pdf",
+    "size": 4910880
+  },
+  {
+    "id": "6d532bd18180",
+    "topic": "Machine Learning",
+    "name": "Singh - Practical Machine Learning and Image Processing For Facial Recognition, Object Detection, and Pattern Recognition Using Python.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Machine%20Learning/Singh%20-%20Practical%20Machine%20Learning%20and%20Image%20Processing%20For%20Facial%20Recognition%2C%20Object%20Detection%2C%20and%20Pattern%20Recognition%20Using%20Python.pdf",
+    "size": 5016105
+  },
+  {
     "id": "2c158964e626",
     "topic": "Cyber Security",
     "name": "Smith - Hacking, The Ultimate Hacking for Beginners, How to Hack, Hacking Intelligence.pdf",
     "url": "https://mahie-cs.github.io/Library-books-1/Cyber%20Security/Smith%20-%20Hacking%2C%20The%20Ultimate%20Hacking%20for%20Beginners%2C%20How%20to%20Hack%2C%20Hacking%20Intelligence.pdf",
     "size": 4403807
+  },
+  {
+    "id": "9890f5b6dc15",
+    "topic": "Others",
+    "name": "Spiegel, Lipschutz, Liu - Schaum's Outline of Mathematical Handbook of Formulas and Tables [3rd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Others/Spiegel%2C%20Lipschutz%2C%20Liu%20-%20Schaum%27s%20Outline%20of%20Mathematical%20Handbook%20of%20Formulas%20and%20Tables%20%5B3rd%20Edition%5D.pdf",
+    "size": 3621357
   },
   {
     "id": "2b8f74df4f98",
@@ -308,11 +798,39 @@
     "size": 2689118
   },
   {
+    "id": "77ac4eb5b721",
+    "topic": "Probability and Statistics",
+    "name": "Spiegel, Schiller, Srinivasan - Schaum's Outlines of Probability and Statistics [3rd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Probability%20and%20Statistics/Spiegel%2C%20Schiller%2C%20Srinivasan%20-%20Schaum%27s%20Outlines%20of%20Probability%20and%20Statistics%20%5B3rd%20Edition%5D.pdf",
+    "size": 9433205
+  },
+  {
+    "id": "7af69abd0a84",
+    "topic": "Probability and Statistics",
+    "name": "Spiegel, Schiller, Srinivasan - Schaum's Outlines of Probability and Statistics [4th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Probability%20and%20Statistics/Spiegel%2C%20Schiller%2C%20Srinivasan%20-%20Schaum%27s%20Outlines%20of%20Probability%20and%20Statistics%20%5B4th%20Edition%5D.pdf",
+    "size": 3671434
+  },
+  {
+    "id": "875e9787b80f",
+    "topic": "Programming / Kotlin",
+    "name": "Späth - Pro Android with Kotlin Developing Modern Mobile Apps.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Programming/Kotlin/Sp%C3%A4th%20-%20Pro%20Android%20with%20Kotlin%20Developing%20Modern%20Mobile%20Apps.pdf",
+    "size": 5688260
+  },
+  {
     "id": "40935832a49b",
     "topic": "Calculus (Single and Multivariable)",
     "name": "Stewart - Multivariable Calculus [7th Edition].pdf",
     "url": "https://mahie-cs.github.io/Library-books-1/Calculus%20%28Single%20and%20Multivariable%29/Stewart%20-%20Multivariable%20Calculus%20%5B7th%20Edition%5D.pdf",
     "size": 16011398
+  },
+  {
+    "id": "656f4c90683a",
+    "topic": "Programming / Python",
+    "name": "Stewart - Python Programming.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Programming/Python/Stewart%20-%20Python%20Programming.pdf",
+    "size": 10371623
   },
   {
     "id": "2faef04e2085",
@@ -327,6 +845,27 @@
     "name": "Stewart, Redlin, Watson - Precalculus Mathematics for Calculus (2015).pdf",
     "url": "https://mahie-cs.github.io/Library-books-1/Calculus%20%28Single%20and%20Multivariable%29/Stewart%2C%20Redlin%2C%20Watson%20-%20Precalculus%20Mathematics%20for%20Calculus%20%282015%29.pdf",
     "size": 59582497
+  },
+  {
+    "id": "c1072507d90a",
+    "topic": "Differential Equation",
+    "name": "Strauss - Partial Differential Equations, An Introduction [2nd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-2/Differential%20Equation/Strauss%20-%20Partial%20Differential%20Equations%2C%20An%20Introduction%20%5B2nd%20Edition%5D.pdf",
+    "size": 2872156
+  },
+  {
+    "id": "ec21aa2db6fb",
+    "topic": "Programming / C, C++, C#",
+    "name": "Stroustrup - The C++ Programming Language [4th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Programming/C%2C%20C%2B%2B%2C%20C%23/Stroustrup%20-%20The%20C%2B%2B%20Programming%20Language%20%5B4th%20Edition%5D.pdf",
+    "size": 4413567
+  },
+  {
+    "id": "68d430a0309b",
+    "topic": "Machine Learning",
+    "name": "Swamynathan - Mastering Machine Learning with Python in Six Steps A Practical Implementation Guide to Predictive Data Analytics Using Python.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Machine%20Learning/Swamynathan%20-%20Mastering%20Machine%20Learning%20with%20Python%20in%20Six%20Steps%20A%20Practical%20Implementation%20Guide%20to%20Predictive%20Data%20Analytics%20Using%20Python.pdf",
+    "size": 10067139
   },
   {
     "id": "64b6069096b4",
@@ -350,6 +889,48 @@
     "size": 19361622
   },
   {
+    "id": "0441c134b9bb",
+    "topic": "Differential Equation",
+    "name": "Trench - Elementary Differential Equations with Boundary Value Problems 1.01 Free Edition.PDF",
+    "url": "https://mahie-cs.github.io/Library-books-2/Differential%20Equation/Trench%20-%20Elementary%20Differential%20Equations%20with%20Boundary%20Value%20Problems%201.01%20Free%20Edition.PDF",
+    "size": 9465210
+  },
+  {
+    "id": "4e78a7a8c70b",
+    "topic": "Programming / C, C++, C#",
+    "name": "TutorialsPoint - Learn C Programming; C Programming Language.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Programming/C%2C%20C%2B%2B%2C%20C%23/TutorialsPoint%20-%20Learn%20C%20Programming%3B%20C%20Programming%20Language.pdf",
+    "size": 1614974
+  },
+  {
+    "id": "fe37bab15446",
+    "topic": "Physics",
+    "name": "University Physics Vol1 (OpenStax).pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Physics/University%20Physics%20Vol1%20%28OpenStax%29.pdf",
+    "size": 78934157
+  },
+  {
+    "id": "5e3e83e23d03",
+    "topic": "Probability and Statistics",
+    "name": "Walpole, Myers - Probability and Statistics for Engineers and Scientists [9th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Probability%20and%20Statistics/Walpole%2C%20Myers%20-%20Probability%20and%20Statistics%20for%20Engineers%20and%20Scientists%20%5B9th%20Edition%5D.pdf",
+    "size": 6287684
+  },
+  {
+    "id": "bc19d00fef45",
+    "topic": "Probability and Statistics",
+    "name": "Walpole, Myers - Solutions to Probability and Statistics for Engineers and Scientists [8th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Probability%20and%20Statistics/Walpole%2C%20Myers%20-%20Solutions%20to%20Probability%20and%20Statistics%20for%20Engineers%20and%20Scientists%20%5B8th%20Edition%5D.pdf",
+    "size": 1502266
+  },
+  {
+    "id": "3fdc1115df39",
+    "topic": "Probability and Statistics",
+    "name": "Walpole, Myers - Solutions to Probability and Statistics for Engineers and Scientists [9th Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Probability%20and%20Statistics/Walpole%2C%20Myers%20-%20Solutions%20to%20Probability%20and%20Statistics%20for%20Engineers%20and%20Scientists%20%5B9th%20Edition%5D.pdf",
+    "size": 54656347
+  },
+  {
     "id": "199263fc79f8",
     "topic": "Computer Architecture",
     "name": "William Stallings - Computer Organization and Architecture, Designing for Performance [8th Edition].pdf",
@@ -362,5 +943,26 @@
     "name": "William Stallings - Data and Computer Communmications [10th Edition].pdf",
     "url": "https://mahie-cs.github.io/Library-books-1/Computer%20Networking/William%20Stallings%20-%20Data%20and%20Computer%20Communmications%20%5B10th%20Edition%5D.pdf",
     "size": 22932367
+  },
+  {
+    "id": "106c16813b46",
+    "topic": "Probability and Statistics",
+    "name": "Yates - Probability and Stochastic Processes [2nd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Probability%20and%20Statistics/Yates%20-%20Probability%20and%20Stochastic%20Processes%20%5B2nd%20Edition%5D.pdf",
+    "size": 5225646
+  },
+  {
+    "id": "711c23dc8aa5",
+    "topic": "Probability and Statistics",
+    "name": "Yates - Solutions to Probability and Stochastic Processes [3rd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Probability%20and%20Statistics/Yates%20-%20Solutions%20to%20Probability%20and%20Stochastic%20Processes%20%5B3rd%20Edition%5D.pdf",
+    "size": 1706760
+  },
+  {
+    "id": "b33aff821798",
+    "topic": "Probability and Statistics",
+    "name": "Yates, Goodman - Solutions to Probability and Stochastic Processes [2nd Edition].pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Probability%20and%20Statistics/Yates%2C%20Goodman%20-%20Solutions%20to%20Probability%20and%20Stochastic%20Processes%20%5B2nd%20Edition%5D.pdf",
+    "size": 2437463
   }
 ]
