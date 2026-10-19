@@ -126,6 +126,87 @@
     render(books.filter(b => (b.title + ' ' + b.author + ' ' + b.topic).toLowerCase().includes(q)));
   });
 
+  // ---- download page: app releases (releases.json is built from GitHub Releases) ----
+  function md(src) {   // small, safe markdown: everything is escaped before any tags are added
+    const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    const inline = s => esc(s)
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/(^|[^*])\*([^*\s][^*]*)\*/g, '$1<em>$2</em>')
+      .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+      .replace(/(^|[\s(])(https?:\/\/[^\s<)]+)/g, '$1<a href="$2" target="_blank" rel="noopener">$2</a>');
+    const out = []; let list = null, code = null, para = [];
+    const flushPara = () => { if (para.length) { out.push('<p>' + para.map(inline).join('<br>') + '</p>'); para = []; } };
+    const flushList = () => { if (list) { out.push('</' + list + '>'); list = null; } };
+    for (const line of String(src).replace(/\r\n?/g, '\n').split('\n')) {
+      if (code !== null) {
+        if (/^```/.test(line)) { out.push('<pre><code>' + esc(code.join('\n')) + '</code></pre>'); code = null; }
+        else code.push(line);
+        continue;
+      }
+      let m;
+      if (/^```/.test(line)) { flushPara(); flushList(); code = []; }
+      else if ((m = line.match(/^(#{1,6})\s+(.*)$/))) { flushPara(); flushList(); const n = Math.min(m[1].length + 2, 6); out.push('<h' + n + '>' + inline(m[2]) + '</h' + n + '>'); }
+      else if ((m = line.match(/^\s*[-*+]\s+(.*)$/))) { flushPara(); if (list !== 'ul') { flushList(); out.push('<ul>'); list = 'ul'; } out.push('<li>' + inline(m[1]) + '</li>'); }
+      else if ((m = line.match(/^\s*\d+[.)]\s+(.*)$/))) { flushPara(); if (list !== 'ol') { flushList(); out.push('<ol>'); list = 'ol'; } out.push('<li>' + inline(m[1]) + '</li>'); }
+      else if (!line.trim()) { flushPara(); flushList(); }
+      else { flushList(); para.push(line); }
+    }
+    if (code !== null) out.push('<pre><code>' + esc(code.join('\n')) + '</code></pre>');
+    flushPara(); flushList();
+    return out.join('');
+  }
+
+  const appsEl = $('apps');
+  function renderApps(list) {
+    appsEl.innerHTML = '';
+    if (!list.length) {
+      appsEl.innerHTML = '<div class="empty"><strong>No downloadable apps yet.</strong><span>Check back soon.</span></div>';
+      return;
+    }
+    list.forEach((r, i) => {
+      const el = document.createElement('article');
+      el.className = 'rel';
+      el.innerHTML = '<header class="rel-head"><span class="tag"></span><h3></h3><time></time></header><ul class="files"></ul>';
+      el.querySelector('.tag').textContent = r.tag;
+      const title = el.querySelector('h3');
+      if (r.name && r.name !== r.tag) title.textContent = r.name; else title.remove();
+      const head = el.querySelector('.rel-head');
+      for (const label of [i === 0 && 'Latest', r.prerelease && 'Pre-release']) {
+        if (!label) continue;
+        const chip = document.createElement('span');
+        chip.className = 'chip';
+        chip.textContent = label;
+        head.insertBefore(chip, el.querySelector('time'));
+      }
+      const d = r.date ? new Date(r.date) : null;
+      const time = el.querySelector('time');
+      if (d && !isNaN(d)) time.textContent = d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }); else time.remove();
+      const files = el.querySelector('.files');
+      for (const a of r.assets) {
+        const li = document.createElement('li');
+        li.innerHTML = '<div class="file"><span class="fname"></span><small></small></div><a class="read-btn" download>Download</a>';
+        li.querySelector('.fname').textContent = a.name;
+        li.querySelector('small').textContent = sizeText(a.size);
+        li.querySelector('a').href = a.url;
+        files.appendChild(li);
+      }
+      if ((r.notes || '').trim()) {
+        const box = document.createElement('details');
+        box.className = 'notes-box';
+        if (i === 0) box.open = true;
+        box.innerHTML = '<summary>Release notes</summary><div class="notes"></div>';
+        box.querySelector('.notes').innerHTML = md(r.notes);
+        el.appendChild(box);
+      }
+      appsEl.appendChild(el);
+    });
+  }
+  fetch('releases.json?t=' + Date.now(), { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : [])
+    .catch(() => [])
+    .then(list => renderApps(Array.isArray(list) ? list : []));
+
   // ---- navigation ----
   const VIEWS = ['home', 'categories', 'download', 'about'];
   function route() {
