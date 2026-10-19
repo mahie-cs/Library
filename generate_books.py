@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
-"""Builds books.json and covers/ from your book repos (Library-books-1, Library-books-2, ...).
-Every PDF in those repos is a book; the folder it sits in is its topic.
-Run by the GitHub Action. By hand:  python3 generate_books.py mahie-cs
-Covers need PyMuPDF:  pip install pymupdf"""
 import json, os, re, sys, tempfile, urllib.parse, urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 COVERS = ROOT / "covers"
 BOOK_REPO = re.compile(r"^Library-books-\d+$", re.I)
+APP_EXTENSIONS = (".apk",)   # files that count as downloadable apps
 
 
 def api(path):
@@ -47,6 +44,22 @@ def collect_repo(owner, name, branch):
         q = "/".join(urllib.parse.quote(p, safe="") for p in parts)
         out.append({"id": item["sha"][:12], "topic": " / ".join(parts[:-1]), "name": parts[-1],
                     "url": site + q, "size": item.get("size", 0), "raw": raw + q})
+    return out
+
+
+def collect_apps(owner, repo):
+    out = []
+    for rel in api(f"/repos/{owner}/{repo}/releases?per_page=100"):
+        if rel.get("draft"):
+            continue
+        assets = [{"name": a["name"], "url": a["browser_download_url"], "size": a["size"]}
+                  for a in rel.get("assets", []) if a["name"].lower().endswith(APP_EXTENSIONS)]
+        if not assets:
+            continue
+        out.append({"tag": rel["tag_name"], "name": rel.get("name") or rel["tag_name"],
+                    "date": rel.get("published_at") or rel.get("created_at") or "",
+                    "prerelease": bool(rel.get("prerelease")), "notes": rel.get("body") or "", "assets": assets})
+    out.sort(key=lambda r: r["date"], reverse=True)   # newest first
     return out
 
 
@@ -90,6 +103,7 @@ def make_covers(books):
 def main():
     arg = sys.argv[1] if len(sys.argv) > 1 else os.environ.get("GITHUB_REPOSITORY", "")
     owner = arg.split("/")[0]
+    main_repo = arg.split("/")[1] if "/" in arg else "Library"
     if not owner:
         sys.exit("Usage: python3 generate_books.py your-github-username")
     books = []
@@ -101,6 +115,12 @@ def main():
     public = [{k: v for k, v in b.items() if k != "raw"} for b in books]
     (ROOT / "books.json").write_text(json.dumps(public, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"books.json: {len(books)} book(s)")
+    try:
+        apps = collect_apps(owner, main_repo)
+        (ROOT / "releases.json").write_text(json.dumps(apps, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        print(f"releases.json: {len(apps)} app release(s)")
+    except Exception as e:
+        print(f"  could not read releases ({e}); releases.json left as it was")
     make_covers(books)
 
 
