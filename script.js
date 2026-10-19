@@ -98,15 +98,32 @@
   }
 
   // ---- popup ----
+  const app = window.LibraryApp || null;   // only exists inside the Android app
+  const busy = new Map();                  // book name -> download percent (inside the app)
+  let current = null;                      // book shown in the popup
+
+  function refreshPopup() {
+    if (!current) return;
+    const b = current, dl = $('m-open');
+    const saved = !!(app && app.hasBook(b.name));
+    dl.hidden = saved;                     // already in the Library Books folder: no second download
+    $('m-saved').hidden = !saved;
+    const pct = busy.get(b.name);
+    dl.classList.toggle('busy', pct !== undefined);
+    dl.textContent = pct !== undefined ? (pct > 0 ? 'Downloading ' + pct + '%' : 'Downloading\u2026')
+                                       : 'Download' + (b.size ? ' \u00b7 ' + sizeText(b.size) : '');
+  }
   function openModal(b) {
+    current = b;
     $('m-title').textContent = b.title;
     $('m-author').textContent = b.author;
     $('m-edition').textContent = b.edition ? editionLabel(b.edition) : '';
-    $('m-read').href = b.url;
-    const dl = $('m-open');
-    dl.href = b.url;
+    const rd = $('m-read'), dl = $('m-open');
+    rd.href = dl.href = b.url;
     dl.setAttribute('download', b.name);
-    dl.textContent = 'Download' + (b.size ? ' \u00b7 ' + sizeText(b.size) : '');
+    rd.onclick = app ? e => { e.preventDefault(); app.readBook(b.url, b.name); } : null;
+    dl.onclick = app ? e => { e.preventDefault(); if (!busy.has(b.name)) app.downloadBook(b.url, b.name); } : null;
+    refreshPopup();
     const img = $('m-cover');
     img.onerror = () => img.removeAttribute('src');
     img.src = coverUrl(b.id);
@@ -114,6 +131,7 @@
     overlay.setAttribute('aria-hidden', 'false');
   }
   function closeModal() {
+    current = null;
     overlay.classList.remove('open');
     overlay.setAttribute('aria-hidden', 'true');
   }
@@ -157,6 +175,43 @@
     return out.join('');
   }
 
+  // Inside the app the file button installs the update instead of just downloading it.
+  const ver = s => ((String(s).match(/\d+(?:\.\d+)*/) || ['0'])[0]).split('.').map(Number);
+  const cmpVer = (x, y) => {
+    for (let i = 0; i < Math.max(x.length, y.length); i++) {
+      const d = (x[i] || 0) - (y[i] || 0);
+      if (d) return d > 0 ? 1 : -1;
+    }
+    return 0;
+  };
+  let apkPct;                              // percent while an update downloads
+  const apkButtons = [];
+  function paintApk() {
+    for (const b of apkButtons) {
+      const active = !!b.dataset.act;
+      b.classList.toggle('busy', apkPct !== undefined || !active);
+      b.textContent = apkPct !== undefined && active
+        ? (apkPct > 0 ? 'Downloading ' + apkPct + '%' : 'Downloading\u2026') : b.dataset.label;
+    }
+  }
+  function appButton(btn, r, a) {
+    const c = cmpVer(ver(r.tag), ver(app.versionName()));
+    btn.removeAttribute('download');
+    btn.dataset.label = c > 0 ? 'Update' : c === 0 ? 'Installed' : 'Older version';
+    if (c > 0) btn.dataset.act = '1';
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      if (c > 0 && apkPct === undefined) app.installUpdate(a.url);
+    });
+    apkButtons.push(btn);
+    paintApk();
+  }
+  window.onLibraryEvent = ev => {          // progress messages from the app
+    if (ev.name === 'apk') { apkPct = ev.type === 'progress' ? ev.pct : undefined; paintApk(); return; }
+    if (ev.type === 'progress') busy.set(ev.name, ev.pct); else if (ev.name) busy.delete(ev.name);
+    refreshPopup();
+  };
+
   const appsEl = $('apps');
   function renderApps(list) {
     appsEl.innerHTML = '';
@@ -188,7 +243,9 @@
         li.innerHTML = '<div class="file"><span class="fname"></span><small></small></div><a class="read-btn" download>Download</a>';
         li.querySelector('.fname').textContent = a.name;
         li.querySelector('small').textContent = sizeText(a.size);
-        li.querySelector('a').href = a.url;
+        const btn = li.querySelector('a');
+        btn.href = a.url;
+        if (app) appButton(btn, r, a);
         files.appendChild(li);
       }
       if ((r.notes || '').trim()) {
@@ -202,10 +259,20 @@
       appsEl.appendChild(el);
     });
   }
-  fetch('releases.json?t=' + Date.now(), { cache: 'no-store' })
+  const releasesP = fetch('releases.json?t=' + Date.now(), { cache: 'no-store' })
     .then(r => r.ok ? r.json() : [])
     .catch(() => [])
-    .then(list => renderApps(Array.isArray(list) ? list : []));
+    .then(list => Array.isArray(list) ? list : []);
+  releasesP.then(renderApps);
+  releasesP.then(list => {                 // "update available" bar, inside the app only
+    if (!app) return;
+    const newest = list.find(r => !r.prerelease);
+    if (newest && cmpVer(ver(newest.tag), ver(app.versionName())) > 0) {
+      const bar = $('update-bar');
+      bar.textContent = 'Update available: ' + newest.tag + '. Tap to update.';
+      bar.hidden = false;
+    }
+  });
 
   // ---- navigation ----
   const VIEWS = ['home', 'categories', 'download', 'about'];
