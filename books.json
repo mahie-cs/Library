@@ -106,9 +106,9 @@
   },
   {
     "id": "c7c75036acac",
-    "topic": "Programming / HTML, CSS, Javascript",
+    "topic": "HTML, CSS, Javascript",
     "name": "Blumenthal - Javascript, Learn Javascript with Ease.pdf",
-    "url": "https://mahie-cs.github.io/Library-books-3/Programming/HTML%2C%20CSS%2C%20Javascript/Blumenthal%20-%20Javascript%2C%20Learn%20Javascript%20with%20Ease.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/HTML%2C%20CSS%2C%20Javascript/Blumenthal%20-%20Javascript%2C%20Learn%20Javascript%20with%20Ease.pdf",
     "size": 591843
   },
   {
@@ -204,9 +204,9 @@
   },
   {
     "id": "5add7fa120ad",
-    "topic": "Programming / Object-Oriented Programming",
+    "topic": "Object-Oriented Programming",
     "name": "Clark - Beginning C# Object-Oriented Programming [2nd Edition].pdf",
-    "url": "https://mahie-cs.github.io/Library-books-3/Programming/Object-Oriented%20Programming/Clark%20-%20Beginning%20C%23%20Object-Oriented%20Programming%20%5B2nd%20Edition%5D.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Object-Oriented%20Programming/Clark%20-%20Beginning%20C%23%20Object-Oriented%20Programming%20%5B2nd%20Edition%5D.pdf",
     "size": 5010511
   },
   {
@@ -281,16 +281,16 @@
   },
   {
     "id": "19173f3cdb55",
-    "topic": "Programming / C, C++, C#",
+    "topic": "C, C++, C#",
     "name": "Deitel - C How to Program [7th Edition].pdf",
-    "url": "https://mahie-cs.github.io/Library-books-3/Programming/C%2C%20C%2B%2B%2C%20C%23/Deitel%20-%20C%20How%20to%20Program%20%5B7th%20Edition%5D.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/C%2C%20C%2B%2B%2C%20C%23/Deitel%20-%20C%20How%20to%20Program%20%5B7th%20Edition%5D.pdf",
     "size": 7745330
   },
   {
     "id": "c1016575a2d4",
-    "topic": "Programming / C, C++, C#",
+    "topic": "C, C++, C#",
     "name": "Deitel - C++ How To Program [10th Edition].pdf",
-    "url": "https://mahie-cs.github.io/Library-books-3/Programming/C%2C%20C%2B%2B%2C%20C%23/Deitel%20-%20C%2B%2B%20How%20To%20Program%20%5B10th%20Edition%5D.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/C%2C%20C%2B%2B%2C%20C%23/Deitel%20-%20C%2B%2B%20How%20To%20Program%20%5B10th%20Edition%5D.pdf",
     "size": 7990146
   },
   {
@@ -344,9 +344,9 @@
   },
   {
     "id": "8b8e67b16b98",
-    "topic": "Programming / Python",
+    "topic": "Python",
     "name": "Eric Matthes - Python Crash Course, A Hands On, Project Based Introduction to Programming [2nd Edition].pdf",
-    "url": "https://mahie-cs.github.io/Library-books-3/Programming/Python/Eric%20Matthes%20-%20Python%20Crash%20Course%2C%20A%20Hands%20On%2C%20Project%20Based%20Introduction%20to%20Programming%20%5B2nd%20Edition%5D.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Python/Eric%20Matthes%20-%20Python%20Crash%20Course%2C%20A%20Hands%20On%2C%20Project%20Based%20Introduction%20to%20Programming%20%5B2nd%20Edition%5D.pdf",
     "size": 7244232
   },
   {
@@ -393,23 +393,23 @@
   },
   {
     "id": "f5c6f2649a92",
-    "topic": "Programming / Kotlin",
+    "topic": "Kotlin",
     "name": "Hagos - Learn Android Studio 3 with Kotlin Efficient Android App Development.pdf",
-    "url": "https://mahie-cs.github.io/Library-books-3/Programming/Kotlin/Hagos%20-%20Learn%20Android%20Studio%203%20with%20Kotlin%20Efficient%20Android%20App%20Development.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Kotlin/Hagos%20-%20Learn%20Android%20Studio%203%20with%20Kotlin%20Efficient%20Android%20App%20Development.pdf",
     "size": 13268565
   },
   {
     "id": "06c57bf92031",
-    "topic": "Programming / Object-Oriented Programming",
+    "topic": "Object-Oriented Programming",
     "name": "Hall - Adaptive Code Agile Coding with Design Patterns and SOLID Principles [2nd Edition].pdf",
-    "url": "https://mahie-cs.github.io/Library-books-3/Programming/Object-Oriented%20Programming/Hall%20-%20Adaptive%20Code%20Agile%20Coding%20with%20Design%20Patterns%20and%20SOLID%20Principles%20%5B2nd%20Edition%5D.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Object-Oriented%20Programming/Hall%20-%20Adaptive%20Code%20Agile%20Coding%20with%20Design%20Patterns%20and%20SOLID%20Principles%20%5B2nd%20Edition%5D.pdf",
     "size": 27757111
   },
   {
     "id": "6c89c039f175",
-    "topic": "Programming / Object-Oriented Programming",
+    "topic": "Object-Oriented Programming",
     "name": "Hall - Adaptive Code via C# Agile Coding with Design Patterns and SOLID Principles.pdf",
-    "url": "https://mahie-cs.github.io/Library-books-3/Programming/Object-Oriented%20Programming/Hall%20-%20Adaptive%20Code%20via%20C%23%20Agile%20Coding%20with%20Design%20Patterns%20and%20SOLID%20Principles.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Object-Oriented%20Programming/Hall%20-%20Adaptive%20Code%20via%20C%23%20Agile%20Coding%20with%20Design%20Patterns%20and%20SOLID%20Principles.pdf",
     "size": 35085191
   },
   {
@@ -463,9 +463,9 @@
   },
   {
     "id": "c844fe93a51c",
-    "topic": "Programming / Django",
+    "topic": "Django",
     "name": "Holovaty, Moss - The Definitive Guide to Django Web Development.pdf",
-    "url": "https://mahie-cs.github.io/Library-books-3/Programming/Django/Holovaty%2C%20Moss%20-%20The%20Definitive%20Guide%20to%20Django%20Web%20Development.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Django/Holovaty%2C%20Moss%20-%20The%20Definitive%20Guide%20to%20Django%20Web%20Development.pdf",
     "size": 1515512
   },
   {
@@ -512,9 +512,9 @@
   },
   {
     "id": "07411a2cdae1",
-    "topic": "Programming / C, C++, C#",
+    "topic": "C, C++, C#",
     "name": "Kalicharan - Learn to Program with C Learn to Program using the Popular C Programming Language.pdf",
-    "url": "https://mahie-cs.github.io/Library-books-3/Programming/C%2C%20C%2B%2B%2C%20C%23/Kalicharan%20-%20Learn%20to%20Program%20with%20C%20Learn%20to%20Program%20using%20the%20Popular%20C%20Programming%20Language.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/C%2C%20C%2B%2B%2C%20C%23/Kalicharan%20-%20Learn%20to%20Program%20with%20C%20Learn%20to%20Program%20using%20the%20Popular%20C%20Programming%20Language.pdf",
     "size": 3526094
   },
   {
@@ -694,9 +694,9 @@
   },
   {
     "id": "1717ef889d11",
-    "topic": "Programming / HTML, CSS, Javascript",
+    "topic": "HTML, CSS, Javascript",
     "name": "Robbins - Learning Web Design, A Beginner’s Guide to HTML, CSS, JavaScript, and Web Graphics [5th Edition].pdf",
-    "url": "https://mahie-cs.github.io/Library-books-3/Programming/HTML%2C%20CSS%2C%20Javascript/Robbins%20-%20Learning%20Web%20Design%2C%20A%20Beginner%E2%80%99s%20Guide%20to%20HTML%2C%20CSS%2C%20JavaScript%2C%20and%20Web%20Graphics%20%5B5th%20Edition%5D.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/HTML%2C%20CSS%2C%20Javascript/Robbins%20-%20Learning%20Web%20Design%2C%20A%20Beginner%E2%80%99s%20Guide%20to%20HTML%2C%20CSS%2C%20JavaScript%2C%20and%20Web%20Graphics%20%5B5th%20Edition%5D.pdf",
     "size": 79711153
   },
   {
@@ -715,9 +715,9 @@
   },
   {
     "id": "f1291180e765",
-    "topic": "Programming / Django",
+    "topic": "Django",
     "name": "Rubio - Beginning Django, Web Application Development with Python.pdf",
-    "url": "https://mahie-cs.github.io/Library-books-3/Programming/Django/Rubio%20-%20Beginning%20Django%2C%20Web%20Application%20Development%20with%20Python.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Django/Rubio%20-%20Beginning%20Django%2C%20Web%20Application%20Development%20with%20Python.pdf",
     "size": 8161504
   },
   {
@@ -813,9 +813,9 @@
   },
   {
     "id": "875e9787b80f",
-    "topic": "Programming / Kotlin",
+    "topic": "Kotlin",
     "name": "Späth - Pro Android with Kotlin Developing Modern Mobile Apps.pdf",
-    "url": "https://mahie-cs.github.io/Library-books-3/Programming/Kotlin/Sp%C3%A4th%20-%20Pro%20Android%20with%20Kotlin%20Developing%20Modern%20Mobile%20Apps.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Kotlin/Sp%C3%A4th%20-%20Pro%20Android%20with%20Kotlin%20Developing%20Modern%20Mobile%20Apps.pdf",
     "size": 5688260
   },
   {
@@ -827,9 +827,9 @@
   },
   {
     "id": "656f4c90683a",
-    "topic": "Programming / Python",
+    "topic": "Python",
     "name": "Stewart - Python Programming.pdf",
-    "url": "https://mahie-cs.github.io/Library-books-3/Programming/Python/Stewart%20-%20Python%20Programming.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/Python/Stewart%20-%20Python%20Programming.pdf",
     "size": 10371623
   },
   {
@@ -855,9 +855,9 @@
   },
   {
     "id": "ec21aa2db6fb",
-    "topic": "Programming / C, C++, C#",
+    "topic": "C, C++, C#",
     "name": "Stroustrup - The C++ Programming Language [4th Edition].pdf",
-    "url": "https://mahie-cs.github.io/Library-books-3/Programming/C%2C%20C%2B%2B%2C%20C%23/Stroustrup%20-%20The%20C%2B%2B%20Programming%20Language%20%5B4th%20Edition%5D.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/C%2C%20C%2B%2B%2C%20C%23/Stroustrup%20-%20The%20C%2B%2B%20Programming%20Language%20%5B4th%20Edition%5D.pdf",
     "size": 4413567
   },
   {
@@ -897,9 +897,9 @@
   },
   {
     "id": "4e78a7a8c70b",
-    "topic": "Programming / C, C++, C#",
+    "topic": "C, C++, C#",
     "name": "TutorialsPoint - Learn C Programming; C Programming Language.pdf",
-    "url": "https://mahie-cs.github.io/Library-books-3/Programming/C%2C%20C%2B%2B%2C%20C%23/TutorialsPoint%20-%20Learn%20C%20Programming%3B%20C%20Programming%20Language.pdf",
+    "url": "https://mahie-cs.github.io/Library-books-3/C%2C%20C%2B%2B%2C%20C%23/TutorialsPoint%20-%20Learn%20C%20Programming%3B%20C%20Programming%20Language.pdf",
     "size": 1614974
   },
   {
