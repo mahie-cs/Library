@@ -143,7 +143,7 @@
   addEventListener('hashchange', route);
   route();
 
-  fetch('books.json', { cache: 'no-cache' })
+  fetch('books.json?t=' + Date.now(), { cache: 'no-store' })
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(list => {
       books = list.map(parse).sort((a, b) => a.title.localeCompare(b.title));
