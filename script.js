@@ -1,168 +1,36 @@
 (() => {
-  const BOOKS_DIR = 'books/';
-  const MAX_PARALLEL = 6;
-  const PDFJS = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
-  let pdfjsReady;
-  const ensurePdfJs = () => pdfjsReady || (pdfjsReady = new Promise((res, rej) => {
-    const s = document.createElement('script');
-    s.src = PDFJS + 'pdf.min.js';
-    s.onload = () => { pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS + 'pdf.worker.min.js'; res(); };
-    s.onerror = () => { pdfjsReady = null; rej(new Error('pdf.js failed')); };
-    document.head.appendChild(s);
-  }));
-
-  const grid = document.getElementById('grid');
-  const statusEl = document.getElementById('status');
-  const overlay = document.getElementById('overlay');
   const $ = id => document.getElementById(id);
-  const covers = new Map();   // path -> dataURL (only finished covers are kept)
+  const grid = $('grid'), statusEl = $('status'), overlay = $('overlay');
+  const coverUrl = id => 'covers/' + id + '.jpg';
   let books = [];
 
-  const coverUrl = path => 'covers/' + path.split('/').map(encodeURIComponent).join('/') + '.jpg';
-  const urlFor = path => BOOKS_DIR + path.split('/').map(encodeURIComponent).join('/');
-
-  // "Authors - Title [Edition].pdf"; the folder (topic) comes from the path
-  function parse(path) {
-    const parts = path.split('/');
-    const file = parts.pop();
-    let base = file.replace(/\.pdf$/i, '').trim();
-    const topic = parts.join(' / ');
+  // entry: { id, topic, name: "Authors - Title [Edition].pdf", url, size }
+  function parse(e) {
+    let base = e.name.replace(/\.pdf$/i, '').trim();
     let edition = '';
-    const e = base.match(/\[([^\]]*)\]\s*$/);
-    if (e) { edition = e[1].trim(); base = base.slice(0, e.index).trim(); }
-    const i = base.indexOf(' - ');          // first " - " separates authors from title
-    const author = i > -1 ? base.slice(0, i).trim() : '';
-    const title = i > -1 ? base.slice(i + 3).trim() : base;
-    return { path, topic, title, edition, author };
+    const m = base.match(/\[([^\]]*)\]\s*$/);
+    if (m) { edition = m[1].trim(); base = base.slice(0, m.index).trim(); }
+    const i = base.indexOf(' - ');            // first " - " separates authors from title
+    return { id: e.id, url: e.url, size: e.size, name: e.name, topic: e.topic || '', edition,
+             author: i > -1 ? base.slice(0, i).trim() : '', title: i > -1 ? base.slice(i + 3).trim() : base };
   }
-
   function editionLabel(e) {
     const m = e.match(/(\d+)\s*(st|nd|rd|th)?/i);
     return m ? m[1] + (m[2] ? m[2].toLowerCase() : '') + ' ed.' : e;
   }
+  const sizeText = n => n ? (n >= 1048576 ? (n / 1048576).toFixed(n >= 10485760 ? 0 : 1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB') : '';
 
-  // ---- finding books (recursive through topic folders) ----
-  async function walk(dirUrl, rel, out, seen) {
-    if (seen.has(dirUrl)) return;
-    seen.add(dirUrl);
-    const r = await fetch(dirUrl);
-    if (!r.ok) throw new Error('listing failed');
-    const doc = new DOMParser().parseFromString(await r.text(), 'text/html');
-    const base = new URL(dirUrl, location.href);
-    const subdirs = [];
-    for (const a of doc.querySelectorAll('a[href]')) {
-      let u;
-      try { u = new URL(a.getAttribute('href'), base); } catch (_) { continue; }
-      if (u.origin !== base.origin || !u.pathname.startsWith(base.pathname) || u.pathname === base.pathname) continue;
-      const name = decodeURIComponent(u.pathname.slice(base.pathname.length));
-      if (name.endsWith('/')) {
-        const dir = name.slice(0, -1);
-        if (dir && !dir.includes('/')) subdirs.push(dir);
-      } else if (/\.pdf$/i.test(name) && !name.includes('/')) {
-        out.push(rel + name);
-      }
-    }
-    await Promise.all(subdirs.map(d =>
-      walk(base.pathname + encodeURIComponent(d) + '/', rel + d + '/', out, seen)));
-  }
-
-  async function listFiles() {
-    // 1) books/books.json (needed on GitHub Pages, which can't list folders)
-    try {
-      const r = await fetch(BOOKS_DIR + 'books.json', { cache: 'no-cache' });
-      if (r.ok) {
-        const list = await r.json();
-        if (Array.isArray(list) && list.length) return list;
-      }
-    } catch (_) {}
-    // 2) otherwise read the server's directory listing (local servers)
-    const out = [];
-    await walk(BOOKS_DIR, '', out, new Set());
-    if (!out.length) throw new Error('no books');
-    return out;
-  }
-
-  // ---- covers: render page 1 only ----
-  function renderCover(path) {
-    let task, cancelled = false;
-    const promise = (async () => {
-      await ensurePdfJs();
-      if (cancelled) throw new Error('cancelled');
-      task = pdfjsLib.getDocument({ url: urlFor(path), disableAutoFetch: true });
-      const pdf = await task.promise;
-      const page = await pdf.getPage(1);
-      const vp = page.getViewport({ scale: 480 / page.getViewport({ scale: 1 }).width });
-      const canvas = document.createElement('canvas');
-      canvas.width = vp.width; canvas.height = vp.height;
-      await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
-      const url = canvas.toDataURL('image/jpeg', 0.85);
-      task.destroy();
-      return url;
-    })();
-    return { promise, cancel: () => { cancelled = true; if (task) task.destroy(); } };
-  }
-
-  // Only books currently on screen are loaded; scrolling away cancels them.
-  const queue = [];            // thumbs waiting for a slot (newest on top)
-  const running = new Map();   // thumb -> { cancel, cancelled }
-  let active = 0;
-
-  function show(thumb, url) {
-    const img = thumb.querySelector('img');
-    img.onload = () => img.classList.add('ready');
-    img.src = url;
-  }
-
-  function enqueue(thumb) {
-    if (running.has(thumb) || queue.includes(thumb)) return;
-    queue.push(thumb);
-    pump();
-  }
-
-  function schedule(thumb) {
-    const path = thumb.dataset.path;
-    const img = thumb.querySelector('img');
-    if (covers.has(path)) return show(thumb, covers.get(path));
-    if (thumb.dataset.nocover) return enqueue(thumb);
-    if (img.getAttribute('src')) return;           // pre-made cover already requested
-    img.onload = () => img.classList.add('ready');
-    img.onerror = () => {                          // no pre-made cover: render from the PDF
-      img.removeAttribute('src');
-      thumb.dataset.nocover = '1';
-      if (thumb.isConnected) enqueue(thumb);
-    };
-    img.src = coverUrl(path);
-  }
-
-  function unschedule(thumb) {
-    const i = queue.indexOf(thumb);
-    if (i > -1) queue.splice(i, 1);
-    const job = running.get(thumb);
-    if (job) { job.cancelled = true; job.cancel(); }
-  }
-
-  function pump() {
-    while (active < MAX_PARALLEL && queue.length) {
-      const thumb = queue.pop();
-      const { promise, cancel } = renderCover(thumb.dataset.path);
-      const job = { cancel, cancelled: false };
-      running.set(thumb, job);
-      active++;
-      thumb.classList.add('loading');
-      promise
-        .then(url => { if (!job.cancelled) { covers.set(thumb.dataset.path, url); show(thumb, url); } })
-        .catch(() => {})
-        .finally(() => {
-          active--; running.delete(thumb);
-          thumb.classList.remove('loading');
-          pump();
-        });
-    }
-  }
-
+  // Covers are small pre-made images, requested only when their card is on screen.
   const io = new IntersectionObserver(entries => {
-    for (const e of entries) e.isIntersecting ? schedule(e.target) : unschedule(e.target);
-  }, { rootMargin: '0px' });
+    for (const e of entries) {
+      if (!e.isIntersecting) continue;
+      io.unobserve(e.target);
+      const img = e.target.querySelector('img');
+      img.onload = () => img.classList.add('ready');
+      img.onerror = () => e.target.classList.add('nocover');
+      img.src = coverUrl(e.target.dataset.id);
+    }
+  });
 
   function makeCard(b) {
     const card = document.createElement('button');
@@ -170,31 +38,26 @@
     card.innerHTML = '<div class="thumb"><img alt=""></div><span class="name"></span>';
     card.querySelector('.name').textContent = b.title;
     const thumb = card.querySelector('.thumb');
-    thumb.dataset.path = b.path;
+    thumb.dataset.id = b.id;
+    thumb.dataset.title = b.title;
     card.addEventListener('click', () => openModal(b));
     io.observe(thumb);
     return card;
   }
-
   function clear(container) {
-    for (const t of container.querySelectorAll('.thumb')) { io.unobserve(t); unschedule(t); }
+    for (const t of container.querySelectorAll('.thumb')) io.unobserve(t);
     container.innerHTML = '';
   }
-
   function render(list) {
     clear(grid);
     for (const b of list) grid.appendChild(makeCard(b));
     statusEl.textContent = list.length ? '' : 'No books found.';
   }
 
-  // Categories: topic tiles -> click one to see its books
-  const catList = $('cat-list');
-  const catTitle = $('cat-title');
-  const catBack = $('cat-back');
-  const catStatus = $('cat-status');
-  let groups = new Map();
-  let currentTopic = '';
-
+  // ---- categories: topic tiles -> click one to see its books ----
+  const catList = $('cat-list'), catTitle = $('cat-title'), catBack = $('cat-back'), catStatus = $('cat-status');
+  let groups = new Map(), currentTopic = '';
+  const countText = n => n + (n === 1 ? ' book' : ' books');
   function buildGroups() {
     groups = new Map();
     for (const b of books) {
@@ -203,8 +66,6 @@
       groups.get(key).push(b);
     }
   }
-  const countText = n => n + (n === 1 ? ' book' : ' books');
-
   function showCategory(topic) {
     currentTopic = topic || '';
     clear(catList);
@@ -237,20 +98,20 @@
   }
 
   // ---- popup ----
-  async function openModal(b) {
+  function openModal(b) {
     $('m-title').textContent = b.title;
     $('m-author').textContent = b.author;
     $('m-edition').textContent = b.edition ? editionLabel(b.edition) : '';
-    $('m-cover').src = '';
-    $('m-open').href = urlFor(b.path);
+    $('m-read').href = b.url;
+    const dl = $('m-open');
+    dl.href = b.url;
+    dl.setAttribute('download', b.name);
+    dl.textContent = 'Download' + (b.size ? ' \u00b7 ' + sizeText(b.size) : '');
+    const img = $('m-cover');
+    img.onerror = () => img.removeAttribute('src');
+    img.src = coverUrl(b.id);
     overlay.classList.add('open');
     overlay.setAttribute('aria-hidden', 'false');
-    const img = $('m-cover');
-    img.onerror = async () => {
-      img.onerror = null;
-      try { const url = await renderCover(b.path).promise; covers.set(b.path, url); img.src = url; } catch (_) {}
-    };
-    img.src = covers.get(b.path) || coverUrl(b.path);
   }
   function closeModal() {
     overlay.classList.remove('open');
@@ -282,14 +143,15 @@
   addEventListener('hashchange', route);
   route();
 
-  listFiles()
-    .then(files => {
-      books = files.map(parse).sort((a, b) => a.title.localeCompare(b.title));
+  fetch('books.json', { cache: 'no-cache' })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(list => {
+      books = list.map(parse).sort((a, b) => a.title.localeCompare(b.title));
       render(books);
       buildGroups();
       showCategory(currentTopic);
     })
     .catch(() => {
-      statusEl.textContent = 'Could not find any books. Run generate_books.py to create books/books.json (GitHub Pages needs it), and serve the site over http, not file://.';
+      statusEl.textContent = 'Could not load books.json. Serve the site over http (not file://) and make sure books.json exists.';
     });
 })();
