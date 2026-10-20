@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "tag": "v1.1",
+    "name": "Released v1.1",
+    "date": "2026-10-20T01:27:49Z",
+    "prerelease": false,
+    "notes": "The first release of Library app\r\n\r\navailable for android,\r\n\r\n- added the ability to read books in app\r\n- added app update function in app\r\n- books are downloadable\r\n",
+    "assets": [
+      {
+        "name": "Library-v1.0.apk",
+        "url": "https://github.com/mahie-cs/Library/releases/download/v1.1/Library-v1.0.apk",
+        "size": 6582965
+      }
+    ]
+  }
+]
