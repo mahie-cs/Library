@@ -1,5 +1,19 @@
 [
   {
+    "tag": "v1.0.1",
+    "name": "Released v1.0.1",
+    "date": "2026-10-20T02:16:14Z",
+    "prerelease": false,
+    "notes": "Update!!\r\n\r\n- new navigation bar\r\n- minor bug fixes\r\n- optimized the app\r\n- in app pdf reader is more efficient",
+    "assets": [
+      {
+        "name": "Library-v1.0.1.apk",
+        "url": "https://github.com/mahie-cs/Library/releases/download/v1.0.1/Library-v1.0.1.apk",
+        "size": 6584393
+      }
+    ]
+  },
+  {
     "tag": "v1.0",
     "name": "Released v1.0",
     "date": "2026-10-20T01:27:49Z",
