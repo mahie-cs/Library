@@ -1,7 +1,5 @@
 # [Library](https://sci-eng-library.vercel.app/)
 
----
-
 An online library for browsing engineering and science books in PDF format.
 
 Created by **MD. Montasir Rahman Mahie**.
