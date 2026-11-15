@@ -1,8 +1,4 @@
-<div align="center">
-  
-# [Library](https://mahie-cs.github.io/Library/)
-
-</div>
+# [Library](https://sci-eng-library.vercel.app/)
 
 > **Incomplete!** This project is still a work in progress.
 
