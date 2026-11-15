@@ -1,6 +1,6 @@
 # [Library](https://sci-eng-library.vercel.app/)
 
-> **Incomplete!** This project is still a work in progress.
+---
 
 An online library for browsing engineering and science books in PDF format.
 
